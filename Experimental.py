@@ -1,8 +1,26 @@
-Year = int(input())
-if 1900 <= Year <= 3000:
-    if not((((Year % 4)==0) and not((Year % 100)==0)) or ((Year % 400)==0)):
-        print ('Високосный')
+a,b,c= [int(input()) for i in range(3)]
+
+max = a
+if a <= b:
+    min = a
+    max = b
+    if  c <= a:
+        min = c
+        mid = a
+    elif c >= b:
+        max = c
+        mid = b
     else:
-        print ('Обычный')
+        mid = c
 else:
-    print ('Ошибка диапазона')
+    min = b
+    max = a
+    if c <= b:
+        min = c
+        mid = b
+    elif c >= a:
+        max = c
+        mid = a
+    else:
+        mid = c
+print (str(max) + '\n' + str(min) +'\n' + str(mid))
