@@ -1,11 +1,9 @@
-a = int(input())
-b = int(input())
-maxshare = int()
+a, b, maxshare = int(input()), int(input()), int()
 i = int(1)
-
-while i <= 9:
+if a < b:
+    a, b = b, a
+while i <= a:
     if a%i == 0 and b%i == 0:
         maxshare = i
     i += 1
-
-print(a*b/maxshare)
+print(int(a*b/maxshare))
